@@ -29,20 +29,20 @@ func PassGenerator(password string, level string) string {
 	}
 
 	genRandomDigits := func() {
-		digitRange := rand.Intn(len(password))
+		digitRange := rand.Intn(len(password)-1) + 1
 
 		for i := 0; i < digitRange; i++ {
-			index := rand.Intn(len(password)-1) + 1
+			index := rand.Intn(len(password))
 			randDigit := rand.Intn(len(digits))
 			password = password[:index] + string(digits[randDigit]) + password[index:]
 		}
 	}
 
 	genRandomSpecialChars := func() {
-		specialCharsRange := rand.Intn(len(password))
+		specialCharsRange := rand.Intn(len(password)-1) + 1
 
 		for i := 0; i < specialCharsRange; i++ {
-			index := rand.Intn(len(password)-1) + 1
+			index := rand.Intn(len(password))
 			randSpecialChars := rand.Intn(len(specialChars))
 			password = password[:index] + string(specialChars[randSpecialChars]) + password[index:]
 		}
