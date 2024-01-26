@@ -19,7 +19,7 @@ func PassGenerator(password string, level string) string {
 	}
 
 	genUpperCase := func() {
-		upperCaseRange := rand.Intn(len(password)-1) + 1
+		upperCaseRange := rand.Intn(len(password))
 
 		for i := 0; i <= upperCaseRange; i++ {
 			index := rand.Intn(len(password))
@@ -29,7 +29,7 @@ func PassGenerator(password string, level string) string {
 	}
 
 	genRandomDigits := func() {
-		digitRange := rand.Intn(len(password)-1) + 1
+		digitRange := rand.Intn(len(password))
 
 		for i := 0; i < digitRange; i++ {
 			index := rand.Intn(len(password))
@@ -39,7 +39,7 @@ func PassGenerator(password string, level string) string {
 	}
 
 	genRandomSpecialChars := func() {
-		specialCharsRange := rand.Intn(len(password)-1) + 1
+		specialCharsRange := rand.Intn(len(password))
 
 		for i := 0; i < specialCharsRange; i++ {
 			index := rand.Intn(len(password))
