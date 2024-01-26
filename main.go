@@ -7,5 +7,5 @@ func main() {
 
 	fmt.Println(PassGenerator("fazztrack", "strong"))
 
-	fmt.Println(MovieDuration(9))
+	fmt.Println(MovieDuration(16))
 }
